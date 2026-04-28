@@ -1,25 +1,25 @@
 #!/bin/bash
 
-# Khai báo đường dẫn tuyệt đối đến thư mục chứa Maven của IntelliJ
+# Đường dẫn Maven của bạn
 MVN_CMD="C:/Program Files/JetBrains/IntelliJ IDEA 2025.3.3/plugins/maven/lib/maven3/bin/mvn"
 
 echo "==================================================="
-echo "  BẮT ĐẦU CHẠY MAVEN TỰ ĐỘNG "
+echo "  BAI 04: KIỂM THỬ ĐA HỆ ĐIỀU HÀNH (LOCAL TEST) "
 echo "==================================================="
 
 echo ""
-echo "[1] Đang dọn dẹp các file cũ (mvn clean)..."
+echo "[1] Dang don dep du an (mvn clean)..."
 "$MVN_CMD" clean
 
 echo ""
-echo "[2] Đang kiểm tra lỗi Checkstyle (mvn checkstyle:check)..."
+echo "[2] Kiem tra Checkstyle..."
 "$MVN_CMD" checkstyle:check
 
 echo ""
-echo "[3] Đang biên dịch, chạy Test và Đóng gói (mvn install)..."
+echo "[3] Chay Test tuong thich HDH va Dong goi (mvn install)..."
 "$MVN_CMD" install
 
 echo ""
 echo "==================================================="
-echo "  HOÀN THÀNH! HÃY KIỂM TRA CHỮ 'BUILD SUCCESS' BÊN TRÊN"
+echo "  DONE! KIEM TRA LOG DE XEM CAC TEST CASE CO PASS KHONG"
 echo "==================================================="
